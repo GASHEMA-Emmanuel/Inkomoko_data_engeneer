@@ -215,7 +215,4 @@ inkomoko-pipeline/
 
 ## 11. Notes on credentials
 
-`.env` ships with simple local-development credentials so a reviewer can run the
-stack instantly. For any real deployment, copy `.env.example`, generate fresh
-secrets (a new Fernet key and webserver secret key — commands are in the file),
-and never commit `.env` (it is git-ignored).
+I've intentionally included the .env file in the repository so the project runs with the single command above, with no extra environment setup required. The credentials in it are local development defaults only.
