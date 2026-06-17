@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: mart_user_post_summary
+    description: >
+      Analytics-ready, one row per user: post counts, comments received on their
+      posts, and average post lengths. Suitable for BI dashboards and as ML
+      features keyed on user.
+    columns:
+      - name: user_id
+        description: "Primary key (one row per user)."
+        tests:
+          - not_null
+          - unique
+      - name: total_posts
+        tests:
+          - not_null
+      - name: total_comments_received
+        tests:
+          - not_null
+
+  - name: mart_comment_statistics
+    description: >
+      Analytics-ready, one row per post: comment volume, unique commenters, and
+      comment-length distribution, joined to the post's author.
+    columns:
+      - name: post_id
+        description: "Primary key (one row per post)."
+        tests:
+          - not_null
+          - unique
+      - name: total_comments
+        tests:
+          - not_null
+      - name: user_id
+        description: "Post author (sourced via stg_posts -> stg_users, whose relationship is tested at the staging layer)."
+        tests:
+          - not_null

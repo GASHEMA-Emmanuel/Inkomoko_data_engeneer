@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: raw
+    description: "Landing tables replicated from PostgreSQL into ClickHouse."
+    database: raw
+    tables:
+      - name: users
+        description: "Raw users from the JSONPlaceholder /users endpoint."
+      - name: posts
+        description: "Raw posts from the JSONPlaceholder /posts endpoint."
+      - name: comments
+        description: "Raw comments from the JSONPlaceholder /comments endpoint."
