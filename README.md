@@ -54,7 +54,7 @@ The DAG `inkomoko_pipeline` is created **unpaused** and on an `@hourly`
 schedule, so the scheduler triggers a run automatically within a minute or two
 of startup — no manual action required.
 
-**Open the Airflow UI:** <http://localhost:8080> · user `admin` / password
+**Open the Airflow UI:** <http://localhost:8088> · user `admin` / password
 `admin` (configurable in `.env`).
 
 ### Trigger a run manually (optional)
